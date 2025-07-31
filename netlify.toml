@@ -8,3 +8,6 @@
   port = 8889
   targetPort = 3000
   autoLaunch = false
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"

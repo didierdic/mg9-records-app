@@ -1,11 +1,10 @@
 # MG9 Records - Professional Music Services
 
-Une application web moderne pour la génération de progressions d'accords et de substitutions harmoniques, développée avec React, TypeScript et Vite.
+Une application web moderne pour la génération de progressions d'accords, développée avec React, TypeScript et Vite.
 
 ## 🎵 Fonctionnalités
 
 - **Générateur de progressions d'accords** : Créez des progressions harmoniques basées sur l'humeur, la tonalité et la complexité
-- **Substitutions d'accords** : Obtenez des suggestions de substitutions pour enrichir vos progressions
 - **Lecture audio** : Écoutez vos progressions avec un synthétiseur intégré
 - **Interface moderne** : Design responsive avec une expérience utilisateur optimisée
 
@@ -14,7 +13,6 @@ Une application web moderne pour la génération de progressions d'accords et de
 ### Prérequis
 - Node.js (version 18 ou supérieure)
 - npm ou yarn
-- Clé API OpenAI (optionnelle pour le développement)
 
 ### Installation
 ```bash
@@ -31,14 +29,8 @@ npm install -g netlify-cli
 
 ### Configuration
 
-1. **Fichier d'environnement** :
-   Créez ou modifiez le fichier `.env.local` :
-   ```
-   OPENAI_API_KEY=votre_clé_api_openai_ici
-   ```
-
-2. **Mode développement sans clé API** :
-   L'application fonctionne avec des données mockées si aucune clé API n'est configurée.
+1. **Mode développement** :
+   L'application utilise des modèles ONNX pour la génération.
 
 ## 🛠️ Développement
 
@@ -80,29 +72,17 @@ npm run build
    - Cliquez sur "Generate Progression"
    - Écoutez le résultat avec le bouton de lecture
 
-2. **Substitutions d'accords** :
-   - Cliquez sur un accord dans une progression générée
-   - Explorez les substitutions suggérées
-   - Remplacez l'accord original si désiré
-
 ## 🚀 Déploiement
 
 ### Netlify (recommandé)
 1. Connectez votre repository à Netlify
-2. Configurez les variables d'environnement :
-   - `OPENAI_API_KEY` : Votre clé API OpenAI
-3. Le déploiement se fait automatiquement
-
-### Configuration des variables d'environnement sur Netlify
-1. Allez dans Site settings > Environment variables
-2. Ajoutez `OPENAI_API_KEY` avec votre clé API
+2. Le déploiement se fait automatiquement
 
 ## Déploiement sur Netlify
 
 ### Prérequis
 1. Compte Netlify
-2. Clé API OpenAI valide
-3. Dépôt Git connecté
+2. Dépôt Git connecté
 
 ### Étapes de déploiement
 
@@ -135,7 +115,6 @@ npm run build
 Les fonctions Netlify ont été converties de ES6 modules vers CommonJS pour assurer la compatibilité :
 
 - ✅ `generateProgression.js` : Conversion en CommonJS
-- ✅ `generateSubstitutions.js` : Conversion en CommonJS  
 - ✅ Ajout de `package.json` dans le dossier functions
 - ✅ Gestion CORS améliorée
 - ✅ Gestion des erreurs robuste
@@ -162,22 +141,17 @@ Pour tester les fonctions Netlify en local :
 - S'assurer que les fonctions utilisent CommonJS (`exports.handler`)
 - Vérifier la configuration dans `netlify.toml`
 
-**Erreur de clé API :**
-- Vérifier que `OPENAI_API_KEY` est configurée dans Netlify
-- S'assurer que la variable d'environnement est bien nommée
-
 ## 🔧 Technologies utilisées
 
 - **Frontend** : React 18, TypeScript, Vite
 - **Styling** : CSS modules, Tailwind CSS
-- **API** : Fonctions Netlify, OpenAI API
+- **API** : Fonctions Netlify, Modèles ONNX
 - **Audio** : Web Audio API
 - **Build** : Vite, TypeScript
 
 ## 📝 Notes de développement
 
-- L'application utilise des données mockées en mode développement si aucune clé API n'est configurée
-- Les fonctions Netlify gèrent les appels à l'API OpenAI
+- L'application utilise des modèles ONNX pour la génération en production
 - Le contexte de lecture audio permet de contrôler la lecture des accords
 - L'application est optimisée pour le déploiement sur Netlify
 
@@ -194,4 +168,4 @@ Pour tester les fonctions Netlify en local :
 Ce projet est sous licence MIT.
 "# mg9-records-app" 
 "# mg9-records-app" 
-"# mg9-records-app" 
+"# mg9-records-app"

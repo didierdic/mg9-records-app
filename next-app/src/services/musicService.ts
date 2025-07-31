@@ -10,7 +10,7 @@ const mockProgression: Progression = [
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 async function postToApi<T>(endpoint: string, data: Record<string, unknown>): Promise<T> {
-  if (isDevelopment && (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === 'PLACEHOLDER_API_KEY')) {
+  if (isDevelopment) {
     console.log(`🎵 Mode développement: utilisation de données mockées pour ${endpoint}`);
     await new Promise(resolve => setTimeout(resolve, 1000));
     if (endpoint === 'generateProgression') {

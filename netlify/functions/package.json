@@ -4,6 +4,6 @@
   "description": "Netlify Functions for MG9 Records",
   "main": "index.js",
   "dependencies": {
-    "openai": "^4.67.3"
+    "onnxruntime-node": "^1.19.0"
   }
 }

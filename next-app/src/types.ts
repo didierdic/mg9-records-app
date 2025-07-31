@@ -3,8 +3,3 @@ export interface Chord {
 }
 
 export type Progression = Chord[];
-
-// Remove ChordSubstitution as substitutions are not supported
-export interface ChordSubstitution extends Chord {
-    explanation: string;
-}
